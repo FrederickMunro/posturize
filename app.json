@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Posturize",
+    "slug": "Posturize",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "Posturize"
+}
