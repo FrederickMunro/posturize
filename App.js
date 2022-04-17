@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './screens/Home';
 import ProfileScreen from './screens/Profile';
+import DashboardScreen from './screens/Dashboard';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -18,6 +19,11 @@ export default function App() {
         options={{ title: 'Welcome' }}
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen
+        name="Dashboard"
+        component={DashboardScreen}
+        options={{ title: 'Dashboard' }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
