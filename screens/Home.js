@@ -10,6 +10,10 @@ const HomeScreen = ({ navigation }) => {
             title="Go to User Profile"
             onPress={() => navigation.navigate('Profile')}
             />
+            <Button
+            title="Go to Dashboard"
+            onPress={() => navigation.navigate('Dashboard')}
+            />
         </View>
     );
 };
@@ -20,7 +24,6 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 15,
         marginBottom: 20,
-        textAlign: 'center',
         height: 150,
         resizeMode: 'contain'
       },
@@ -29,6 +32,5 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      fontFamily: "Poppins-Bold",
     },
   });
