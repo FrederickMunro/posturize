@@ -28,7 +28,7 @@ const Signup = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Dashboard')} >
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Signup')} >
             <Text style={styles.text}>Sign up</Text>
         </TouchableOpacity>
         <View style={styles.sign}>

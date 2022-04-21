@@ -5,6 +5,21 @@ const Login = ({ navigation }) => {
 
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+    const [badLogin, setBadLogin] = React.useState(false);
+
+    const isBadLogin = () => {
+        if (badLogin) {
+            return <Text style={styles.error}>Information does not match a registered account</Text>
+        }
+    }
+
+    const login = () => {
+        if (email.toLowerCase() === 'admin@gmail.com' && password === 'admin') {
+            navigation.navigate('Dashboard');
+        } else {
+            setBadLogin(true);
+        }
+    }
 
     return (
         <View style={styles.outsideContainer} >
@@ -12,8 +27,9 @@ const Login = ({ navigation }) => {
                 <Text style={styles.titleOne}>Sign in to</Text>
                 <Text style={styles.titleTwo}>your account</Text>
                 <TextInput value={email} placeholder={'Email*'} style={styles.input} onChangeText={setEmail} />
-                <TextInput value={password} placeholder={'Password*'} style ={styles.input} onChangeText={setPassword} />
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Dashboard')} >
+                <TextInput secureTextEntry value={password} placeholder={'Password*'} style ={styles.input} onChangeText={setPassword} />
+                { isBadLogin() }
+                <TouchableOpacity style={styles.button} onPress={() => login()} >
                     <Text style={styles.text}>Sign in</Text>
                 </TouchableOpacity>
                 <View style={styles.sign}>
@@ -82,5 +98,8 @@ const styles = StyleSheet.create({
     },
     signup: {
         color: 'blue'
+    },
+    error: {
+        color: 'red'
     }
 })
