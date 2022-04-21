@@ -6,6 +6,8 @@ import ProfileScreen from './screens/Profile';
 import Dashboard from './screens/Dashboard';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
+import TermsOfService from './screens/TermsOfService';
+import PrivacyPolicy from './screens/PrivacyPolicy';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -23,6 +25,8 @@ export default function App() {
         <Stack.Screen name='Login' component={Login} options={{ headerShown: false }} />
         <Stack.Screen name='Signup' component={Signup} options={{ headerShown: false }} />
         <Stack.Screen name='Dashboard' component={Dashboard} options={{ headerShown: false }} />
+        <Stack.Screen name='Terms of Service' component={TermsOfService} />
+        <Stack.Screen name='Privacy Policy' component={PrivacyPolicy} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, Text, Image, ScrollView, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 
 const Login = ({ navigation }) => {
 
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     container: {
-        width: '94%'
+        width: '92%'
     },
     titleOne: {
         fontSize: 40,
@@ -66,7 +66,9 @@ const styles = StyleSheet.create({
       width: "100%",
       height: '14%',
       borderRadius: 10,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      marginTop: 10,
+      marginBottom: 10
     },
     text: {
       color: 'white',
