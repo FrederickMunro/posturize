@@ -1,36 +1,50 @@
 import React from 'react'
-import {View, Text, Image, ScrollView, TextInput, StyleSheet, Button} from 'react-native'
+import { View, Text, Image, ScrollView, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import PosturizeLogo from '../image/Posturize-logos_transparent_borderless.png';
 
 const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Image source={require('../image/Posturize-logos_black.png')} style={styles.image}/> 
-            <Text>Welcome to Posturize!</Text>
-            <Button
-            title="Go to User Profile"
-            onPress={() => navigation.navigate('Profile')}
-            />
+            <Image source={PosturizeLogo} style={styles.image} />
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')} >
+              <Text style={styles.text} >Straighten up!</Text>
+            </TouchableOpacity>
+            {/*
             <Button
             title="Go to Dashboard"
             onPress={() => navigation.navigate('Dashboard')}
             />
+            */}
         </View>
     );
 };
     
 export default HomeScreen;
+
 const styles = StyleSheet.create({
-    image: {
-        padding: 20,
-        borderRadius: 15,
-        marginBottom: 20,
-        height: 150,
-        resizeMode: 'contain'
-      },
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
+  image: {
+      height: '83%',
+      width: '100%',
+      resizeMode: 'contain'
+  },
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  button: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'orange',
+    width: "90%",
+    height: '8%',
+    borderRadius: 10,
+    fontWeight: 'bold'
+  },
+  text: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18
+  }
+});
