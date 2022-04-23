@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Text, Image, ScrollView, TextInput, StyleSheet, Button, TouchableOpacity} from 'react-native'
 
-function ProfileScreen() {
+const ProfileScreen = ({ navigation }) => {
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }} style={{ backgroundColor: '#eceff2', paddingTop: 20 }}>
             <TextInput placeholder='First name' placeholderTextColor="#ffffff" style={styles.input}>First name</TextInput>
