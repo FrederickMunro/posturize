@@ -27,7 +27,7 @@ const DashboardScreen = ({ navigation }) => {
             <Text style={styles.sectionTitle}>Hi {demoUserName}</Text>
             <View style={styles.container}>
                 <Pressable style={styles.button} onPress={() => navigation.navigate('Profile')}>
-                    <Text style={styles.text}>Check profile</Text>
+                    <Text style={styles.text}>Your profile</Text>
                 </Pressable>
             </View>
             <Text>{"\n"}</Text>
@@ -43,7 +43,7 @@ const DashboardScreen = ({ navigation }) => {
                   <Text style={styles.sectionTitle}>Today's exercises</Text>
             <View style={styles.container}>
             <Pressable style={styles.button} onPress={() => navigation.navigate('Exercises')}>
-                <Text style={styles.text}>Check today's exercises</Text>
+                <Text style={styles.text}>Add exercises to your day!</Text>
             </Pressable>
             </View>
             </ScrollView>
