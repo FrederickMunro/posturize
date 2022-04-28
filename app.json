@@ -5,7 +5,20 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/favicon.png",
+          "sound": true,
+          "vibrate": true
+        }
+      ]
+    ],
+    "ios": {
+      "bundleIdentifier": "iosbundle"
+    }
   },
   "name": "Posturize"
 }
