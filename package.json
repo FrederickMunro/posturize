@@ -22,7 +22,6 @@
     "react-native-svg-charts": "^5.4.0",
     "react-native-web": "0.17.1",
     "react-navigation": "^4.4.4",
-    "victory-native": "^36.3.2",
     "serialport": "^10.4.0",
     "socket.io": "^4.5.0"
   },
