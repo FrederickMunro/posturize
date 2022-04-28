@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, Image, ScrollView, TextInput, StyleSheet, Button, Pressable, KeyboardAvoidingView, TouchableOpacity, Keyboard} from 'react-native'
 import { ProgressCircle } from 'react-native-svg-charts'
 import Exercise from '../components/Exercise';
+import { Notifications } from 'expo';
 
 const DashboardScreen = ({ navigation }) => {
     const demoUserName = 'Jason';
@@ -10,32 +11,21 @@ const DashboardScreen = ({ navigation }) => {
     // Exercises 
     const [exercise, setExercise] = useState();
     const [exerciseItems, setExerciseItems] = useState(['Take a walk', 'Stretch', 'Stand']);
-
-    const handleAddExercise = () => {
-        Keyboard.dismiss();
-        setExerciseItems([...exerciseItems, exercise])
-        setExercise(null);
-      }
-    
-      const completeExercise = (index) => {
-        let itemsCopy = [...exerciseItems];
-        itemsCopy.splice(index, 1);
-        setExerciseItems(itemsCopy)
-      }
     return (
         <ScrollView style={styles.page}>
             <Text style={styles.sectionTitle}>Hi {demoUserName}</Text>
             <View style={styles.container}>
                 <Pressable style={styles.button} onPress={() => navigation.navigate('Profile')}>
-                    <Text style={styles.text}>Your profile</Text>
+                    <Text style={styles.text}>Go to your profile</Text>
                 </Pressable>
             </View>
             <Text>{"\n"}</Text>
             <Text style={styles.sectionTitle}>Good posture time</Text>
-            <View style={styles.container}>
+            <Pressable style={styles.container} onPress={() => navigation.navigate('Charts')}>
                 <Text style={styles.textStyle}>You have been in good posture {userProgress*100}% of time today! {"\n"}</Text>
                 <ProgressCircle style={{ height: 200 }} progress={userProgress} progressColor={'orange'}/>
-            </View>
+            </Pressable>
+            
             <Text style={styles.percentage}>
                 {userProgress*100}%
             </Text>
@@ -86,7 +76,7 @@ const styles = StyleSheet.create({
         padding: 20,
         margin: 10,
         backgroundColor: '#fff',
-        borderRadius: 7,
+        borderRadius: 20,
         shadowColor: "#000",
         shadowOffset: {
             width: 5,
@@ -94,7 +84,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.50,
         shadowRadius: 5.84,
-        elevation: 1,
+        elevation: 15,
     },
     button: {
         alignItems: 'center',
