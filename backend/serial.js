@@ -33,7 +33,7 @@ server.listen(3000, () => {
 const { ReadlineParser } = require('@serialport/parser-readline')
 const parser = new ReadlineParser()
 const port = new SerialPort({
-  path: '/dev/cu.usbserial-DN01EYVM',
+  path: '/dev/cu.usbserial-DN01YP3P',
   baudRate: 9600,
   databits: 8, 
   parity:'none',
