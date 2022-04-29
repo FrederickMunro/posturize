@@ -9,12 +9,6 @@ const HomeScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')} >
               <Text style={styles.text} >Straighten up!</Text>
             </TouchableOpacity>
-            {/*
-            <Button
-            title="Go to Dashboard"
-            onPress={() => navigation.navigate('Dashboard')}
-            />
-            */}
         </View>
     );
 };

@@ -9,6 +9,7 @@ import Signup from './screens/Signup';
 import Exercises from './screens/Exercises';
 import TermsOfService from './screens/TermsOfService';
 import PrivacyPolicy from './screens/PrivacyPolicy';
+import Settings from './screens/Settings';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -30,6 +31,7 @@ export default function App() {
         <Stack.Screen name='Terms of Service' component={TermsOfService} />
         <Stack.Screen name='Privacy Policy' component={PrivacyPolicy} />
         <Stack.Screen name='Exercises' component={Exercises} options={{ headerShown: false }}/>
+        <Stack.Screen name='Settings' component={Settings} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
