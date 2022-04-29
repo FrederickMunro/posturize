@@ -2,7 +2,6 @@ import React, {useState, useRef, useEffect} from 'react';
 import {View, Text, Image, ScrollView, TextInput, StyleSheet, Button, Pressable, KeyboardAvoidingView, TouchableOpacity, Keyboard} from 'react-native'
 import { ProgressCircle } from 'react-native-svg-charts'
 import Exercise from '../components/Exercise';
-import { Notifications } from 'expo';
 
 // Notifications
 
