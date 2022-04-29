@@ -1,16 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, Image, ScrollView, TextInput, StyleSheet, Button, Pressable, KeyboardAvoidingView, TouchableOpacity, Keyboard} from 'react-native'
 import { ProgressCircle } from 'react-native-svg-charts'
 import Exercise from '../components/Exercise';
 import { Notifications } from 'expo';
 
+import socketIOClient from "socket.io-client";
+const ENDPOINT = "http://127.0.0.1:4001";
+
+
+
 const DashboardScreen = ({ navigation }) => {
+
+    const [response, setResponse] = useState("");
+
+    useEffect(() => {
+      const socket = socketIOClient(ENDPOINT);
+      socket.on("fromarduino", data => {
+        setResponse(data);
+      });
+    }, []);
+ 
     const demoUserName = 'Jason';
     var userProgress = 0.7;
 
     // Exercises 
     const [exercise, setExercise] = useState();
     const [exerciseItems, setExerciseItems] = useState(['Take a walk', 'Stretch', 'Stand']);
+  
+
+
+
     return (
         <ScrollView style={styles.page}>
             <Text style={styles.sectionTitle}>Hi {demoUserName}</Text>
@@ -20,6 +39,10 @@ const DashboardScreen = ({ navigation }) => {
                 </Pressable>
             </View>
             <Text>{"\n"}</Text>
+            <Text style={styles.sectionTitle}>Current Posture</Text>
+            <Pressable style={styles.container}>
+            <Text style={styles.sectionTitle}>Your position is:{demoUserName}</Text>
+            </Pressable>
             <Text style={styles.sectionTitle}>Good posture time</Text>
             <Pressable style={styles.container} onPress={() => navigation.navigate('Charts')}>
                 <Text style={styles.textStyle}>You have been in good posture {userProgress*100}% of time today! {"\n"}</Text>

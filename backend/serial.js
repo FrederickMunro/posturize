@@ -1,37 +1,26 @@
 
-
 const express = require('express');
 const app = express();
 const http = require('http');
+const socketIO = require("socket.io");
+
+const port2 =process.env.PORT || 3000
 const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
+
+const io = socketIO(server);
+const { SerialPort } = require('serialport')
+const { ReadlineParser } = require('@serialport/parser-readline');
 
 
 //serving a server 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+    res.send({ response: "I am alive" }).status(200);
 });
 
-server.listen(3000, () => {
-    console.log('listening on *:3000');
+server.listen(port2, () => {
+    console.log('listening on:' + port2);
   });
   
-
-
-
-
-
-  
-
-
-
-
-
-
-  const { SerialPort } = require('serialport')
-const { ReadlineParser } = require('@serialport/parser-readline')
-const parser = new ReadlineParser()
 const port = new SerialPort({
   path: '/dev/cu.usbserial-DN01YP3P',
   baudRate: 9600,
@@ -40,12 +29,27 @@ const port = new SerialPort({
   stopBits:1, 
   flowControl: false
 })
-
+const parser = new ReadlineParser()
 port.pipe(parser);
-parser.on('data', function(data) {
+
+
+io.on("connection", (socket)=> {
+    console.log("new connection")
+   
+    socket.on("disconnect", ()=>{
+        console.log("client disconnected")
+    })   
+    
+})
+
+  
+parser.on('data', (data)=> {
     
     console.log('Received data from port: ' + data);
     io.emit('data', data);
+    
+
+
       
   });
   
