@@ -18,7 +18,6 @@ Posturize is a smart posture corrector aimed at significantly improving the user
 | Name                         | GitHub Username  | Student ID |
 | ---------------------------- | ---------------- | ---------- |
 | Tyson Pham                   | TysonPham        | 40017829   |
-| ---------------------------- | ---------------- | ---------- |
 | Frederick Munro              | FrederickMunro   | 40063651   |
 
 ## BackEnd
