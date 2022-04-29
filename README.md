@@ -4,14 +4,14 @@
 Posturize is a smart posture corrector aimed at significantly improving the user’s back health. The device works by using a flex sensor to monitor the angle of the wearer’s back. An Arduino board is utilized to process and send the information to a mobile app which aids the user in identifying a correct posture. Furthermore, the application will warn the user when they display an unhealthy form and provide day-to-day statistics regarding the user’s posture.
 ## Features
 
--Live posture feedback
--Exercise to-do list 
+- Live posture feedback
+- Exercise to-do list 
 
 ## Technologies Used
--React-native
--Node.js 
--Arduino 
--Flex Sensor
+- React-native
+- Node.js 
+- Arduino board 
+- Flex Sensor
 
 ## Team Members
 
