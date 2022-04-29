@@ -2,6 +2,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import {View, Text, Image, ScrollView, TextInput, StyleSheet, Button, Pressable, KeyboardAvoidingView, TouchableOpacity, Keyboard} from 'react-native'
 import { ProgressCircle } from 'react-native-svg-charts'
 import Exercise from '../components/Exercise';
+import { Notifications } from 'expo';
 
 // Notifications
 
@@ -81,7 +82,7 @@ const DashboardScreen = ({ navigation }) => {
             <Text style={styles.sectionTitle}>Hi {demoUserName}</Text>
             <View style={styles.container}>
                 <Pressable style={styles.button} onPress={() => navigation.navigate('Profile')}>
-                    <Text style={styles.text}>Your profile</Text>
+                    <Text style={styles.text}>Go to your profile</Text>
                 </Pressable>
             </View>
             <Text>{"\n"}</Text>
@@ -92,6 +93,10 @@ const DashboardScreen = ({ navigation }) => {
                 <ProgressCircle style={{ height: 200 }} progress={userProgress} progressColor={'orange'}/>
                 <Text style={styles.text}>View Weekly Report{"\n"}</Text>
             </View>
+            <Pressable style={styles.container} onPress={() => navigation.navigate('Charts')}>
+                <Text style={styles.textStyle}>You have been in good posture {userProgress*100}% of time today! {"\n"}</Text>
+                <ProgressCircle style={{ height: 200 }} progress={userProgress} progressColor={'orange'}/>
+            </Pressable>
             <Text style={styles.percentage}>
                 {userProgress*100}%
             </Text>
@@ -143,7 +148,7 @@ const styles = StyleSheet.create({
         padding: 20,
         margin: 10,
         backgroundColor: '#fff',
-        borderRadius: 7,
+        borderRadius: 20,
         shadowColor: "#000",
         shadowOffset: {
             width: 5,
@@ -151,7 +156,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.50,
         shadowRadius: 5.84,
-        elevation: 1,
+        elevation: 15,
     },
     button: {
         alignItems: 'center',
