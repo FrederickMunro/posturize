@@ -18,6 +18,8 @@ Posturize is a smart posture corrector aimed at significantly improving the user
 | Name                         | GitHub Username  | Student ID |
 | ---------------------------- | ---------------- | ---------- |
 | Tyson Pham                   | TysonPham        | 40017829   |
+| ---------------------------- | ---------------- | ---------- |
+| Frederick Munro              | FrederickMunro   | 40063651   |
 
 ## BackEnd
 Node.js and various libraries (Socket.io and Serialport) are used to read incoming serial data from the flex sensor. A parser is used to read the incoming serial data that is in the form of raw binary data and transform them into readable numbers. 
