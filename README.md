@@ -20,7 +20,7 @@ Posturize is a smart posture corrector aimed at significantly improving the user
 | Tyson Pham                   | TysonPham        | 40017829   |
 | Frederick Munro              | FrederickMunro   | 40063651   |
 | Khagik Astor                 | Kastor14         | 40099665   |
-| Ejazali Rezayi               | --------------   | 40101892   |
+| Ejazali Rezayi               | ejazali-rezayi   | 40101892   |
 | Daren Kafafian               | Dkafaf           | 40100511   |
 | Mahmoud Idlbi                | --------------   | 40016792   |
 
