@@ -22,7 +22,7 @@ Posturize is a smart posture corrector aimed at significantly improving the user
 | Khagik Astor                 | Kastor14         | 40099665   |
 | Ejazali Rezayi               | ejazali-rezayi   | 40101892   |
 | Daren Kafafian               | Dkafaf           | 40100511   |
-| Mahmoud Idlbi                | --------------   | 40016792   |
+| Mahmoud Idlbi                | Mah514           | 40016792   |
 
 ## BackEnd
 Node.js and various libraries (Socket.io and Serialport) are used to read incoming serial data from the flex sensor. A parser is used to read the incoming serial data that is in the form of raw binary data and transform them into readable numbers. 
